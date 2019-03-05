@@ -25,12 +25,12 @@ class BTreeNode<T> {
   }
   func traversePreorder(completion: ((T)->())? ) {
     completion?(value)
-    left?.traverseInorder(completion: completion)
-    right?.traverseInorder(completion: completion)
+    left?.traversePreorder(completion: completion)
+    right?.traversePreorder(completion: completion)
   }
   func traversePostorder(completion: ((T)->())? ) {
-    left?.traverseInorder(completion: completion)
-    right?.traverseInorder(completion: completion)
+    left?.traversePostorder(completion: completion)
+    right?.traversePostorder(completion: completion)
     completion?(value)
   }
 }
