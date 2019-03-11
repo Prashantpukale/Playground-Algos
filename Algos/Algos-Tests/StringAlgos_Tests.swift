@@ -95,6 +95,54 @@ class StringAlgos_Tests: XCTestCase {
     XCTAssert(res == "BA")
   }
   
+  func testAnagram1() {
+    let string1 = "123"
+    let string2 = "321"
+    XCTAssert(StringAlgos.isAnagram(string1, string2))
+  }
+  
+  func testAnagram2() {
+    let string1 = "321 "
+    let string2 = " 321"
+    XCTAssert(StringAlgos.isAnagram(string1, string2))
+  }
+  
+  func testAnagram3() {
+    let string1 = ""
+    let string2 = ""
+    XCTAssert(StringAlgos.isAnagram(string1, string2))
+  }
+  
+  func testAnagram4() {
+    let string1 = "🎃 👀"
+    let string2 = "👀 🎃"
+    XCTAssert(StringAlgos.isAnagram(string1, string2))
+  }
+  
+  func testAnagram5() {
+    let string1 = "🎃"
+    let string2 = "👀 🎃"
+    XCTAssert(!StringAlgos.isAnagram(string1, string2))
+  }
+  
+  func testAnagram6() {
+    let string1 = "\(#line)"
+    let string2 = "\(#line)"
+    XCTAssert(!StringAlgos.isAnagram(string1, string2))
+  }
+  
+  func testAnagram7() {
+    let string1 = #file
+    let string2 = #file
+    XCTAssert(StringAlgos.isAnagram(string1, string2))
+  }
+  
+  func testAnagram8() {
+    let string1 = #function
+    let string2 = #function
+    XCTAssert(StringAlgos.isAnagram(string1, string2))
+  }
+  
   func testPerformanceExample() {
     // This is an example of a performance test case.
     self.measure {

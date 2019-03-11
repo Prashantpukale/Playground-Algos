@@ -40,4 +40,14 @@ struct StringAlgos {
     }
     return reversed(str: String(str.dropFirst())) + String(str[str.startIndex])
   }
+  static func isAnagram(_ string1: String,_ string2: String) -> Bool {
+    var res: Int = 0
+    res = string1.reduce(res) { (res: Int, character) -> Int in
+      return res ^ character.hashValue
+    }
+    res = string2.reduce(res) { (res: Int, character) -> Int in
+      return res ^ character.hashValue
+    }
+    return res == 0
+  }
 }
